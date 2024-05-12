@@ -1,4 +1,3 @@
-
 function autogenerate() {
     var length = document.getElementById('passLength').value;
     var characters = "";
@@ -12,6 +11,11 @@ function autogenerate() {
     var lwr = document.getElementById("lowerCase").checked;
     var numb =  document.getElementById("numbers").checked;
     var spcl =  document.getElementById("specailCharacters").checked;
+
+    if (!upr && !lwr && !numb && !spcl) {
+        document.getElementById("passInput").value = "Select At Least One Check Box!";
+        return; 
+    }
 
     if (upr) {
         characters += uppCase;
@@ -30,8 +34,13 @@ function autogenerate() {
 
     for (var i = 0; i < length; i++) {
         var random = Math.floor(Math.random() * characters.length);
-        password += characters.charAt(random); // Instead of substring, using charAt
+        password += characters.charAt(random);
     }
 
-    document.getElementById("passInput").value = password; // Update input field value
+    document.getElementById("passInput").value = password;
+}
+
+function updatePassLength() {
+    var length = document.getElementById('passLength').value;
+    document.getElementById('passLengthDisplay').textContent = length;
 }

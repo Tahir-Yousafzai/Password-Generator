@@ -4,30 +4,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrape.css">
+    <link rel="stylesheet" href="style.css">
     <title>Password generator</title>
 </head>
 
 <body>
 
+    <video autoplay muted loop class="video-background">
+        <source src="images/pass video.mp4" type="video/mp4">
+    </video>
 
-        
-        <div class="container">
-            <input type="text" id="passInput">
-            <br>
-            <input type="range" id="passLength" min="5" max="20">
-            <span></span>
-            <br>
-            <input type="checkbox" id="upperCase">UPPERCASE
-            <br>
-            <input type="checkbox" id="lowerCase">lowercase
-            <br>
-            <input type="checkbox" id="numbers">Number (0 - 9)
-            <br>
-            <input type="checkbox" id="specailCharacters">!@#$%^&*()
-            <br>
-            <button type="submit" onclick="autogenerate()"> Generate Pass</button>
+    <div class="heading">
+        <h1>Auto Password Generator</h1>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3  col-md-3 col-sm-0"></div>
+            <div class="col-lg-6 col-md-6 col-sm-12 d-flex justify-content-center">
+                <div class="main-box mt-5">
+                    <div class="pass-input">
+                        <input type="text" id="passInput">
+                    </div>
+                    <div class="range-box d-flex justify-content-between">
+                        <input type="range" id="passLength" min="5" max="20" oninput="updatePassLength()">
+                        <span id="passLengthDisplay"></span>
+                    </div>
+
+                    <div class="main-check-box d-flex justify-content-between">
+                        <div class="chid-check-box">
+                            <input class="check-icon" type="checkbox" id="upperCase"> UPPERCASE
+                            <br>
+                            <input class="check-icon" type="checkbox" id="lowerCase"> lowercase
+                        </div>
+                        <div class="chid-check-box">
+                            <input class="check-icon" type="checkbox" id="numbers"> Number (0 - 9)
+                            <br>
+                            <input class="check-icon" type="checkbox" id="specailCharacters"> Specail Letter
+                        </div>
+                    </div>
+
+                    <button class="form-control mt-3 btn btn-danger" type="submit" onclick="autogenerate()"> Generate
+                        Password</button>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-0"></div>
+
         </div>
-        
+    </div>
 
 
 
